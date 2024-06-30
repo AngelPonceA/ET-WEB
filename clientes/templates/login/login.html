@@ -1,0 +1,21 @@
+{% extends 'base/plantilla_base.html'%}
+{% load static %}
+
+{% block title %} Ingreso {% endblock %}
+
+{% block content %}
+<main class="bg-login">
+    <form>
+        <div class="formato_reg_ing_container">
+            <div class="formato_reg_ing">
+                <H2>INGRESAR</H2>
+                <label for="emailI">EMAIL</label>
+                <input class="form-control" type="email" id="emailI" placeholder="Ingrese su correo">
+                <label for="claveI">CLAVE</label>
+                <input class="form-control" type="password" id="claveI" placeholder="Ingrese su contraseña">
+                <button id="btnIngresar" type="submit">CONTINUAR</button>
+            </div>
+        </div>
+    </form>
+</main>
+{% endblock %}
