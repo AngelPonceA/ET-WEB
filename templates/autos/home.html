@@ -1,0 +1,79 @@
+{% extends 'base/plantilla_base.html'%}
+
+{% block title%} Autos Del Mar {% endblock %}
+
+{% block content %}
+    <div class="row mx-0">
+        <!-- FILTRO -->
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 my-2 ">
+            <div class="filtro">
+                <h1 class="text-start">Marca Modelo</h1>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">MARCA</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>Sin asignar</option>
+                        <option value="1">Ferrari</option>
+                        <option value="2">Lamborghini</option>
+                        <option value="3">Porsche</option>
+                        <option value="4">McLaren</option>
+                        <option value="5">Aston Martin</option>
+                        <option value="6">Chevrolet</option>
+                        <option value="7">Ford</option>
+                        <option value="8">Nissan</option>
+                        <option value="9">Audi</option>
+                        <option value="9">Mercedes Benz</option>
+                    </select>
+                </div>
+                <h1 class="text-start">Año</h1>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect02">DESDE</label>
+                    <select class="form-select" id="inputGroupSelect02">
+                        <option selected>Sin asignar</option>
+                        <option value="1">2005</option>
+                        <option value="2">2010</option>
+                        <option value="3">2015</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect03">HASTA</label>
+                    <select class="form-select" id="inputGroupSelect03">
+                        <option selected>Sin asignar</option>
+                        <option value="1">2020</option>
+                        <option value="2">2022</option>
+                        <option value="3">2024</option>
+                    </select>
+                </div>
+                <h1 class="text-start">PRECIO</h1>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect04">RANGO</label>
+                    <select class="form-select" id="inputGroupSelect04">
+                        <option selected>Sin asignar</option>
+                        <option value="1">$0 y $100.000.000</option>
+                        <option value="2">$100.000.000 y $200.000.000</option>
+                        <option value="3">Más de $200.000.000</option>
+                    </select>
+                </div>
+                <button class="boton-filtrar" id="btnFiltrar">FILTRAR</button>
+            </div>
+        </div>
+
+        <!-- GALERIA DE AUTOS -->
+        <div class="galeria col-sm-12 col-md-12 col-lg-8 col-xl-8 my-2" id="galeriaAutos">
+            {% for auto in autos %}
+                <div class="carta">
+                    <img src="{{auto.img.url }}" class="card-img-top">
+                    <div class="info-carta">
+                        <h2>{{auto.modelo}}</h2>
+                        <p>{{auto.marca}}</p>
+                        <p>${{auto.precio}}</p>
+                        <p>Stock: {{auto.stock}}</p>
+                    </div>
+                    <div class="contenedor-botones-carta">
+                        <button class="boton-verMas">Ver detalles</button>
+                        <button class="boton-agregar">+</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
