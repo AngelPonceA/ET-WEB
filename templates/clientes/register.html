@@ -1,0 +1,24 @@
+{% extends 'base/plantilla_base.html'%}
+{% load static %}
+
+{% block title %} Registro {% endblock %}
+
+{% block content %}
+<main class="bg-login">
+    <div>
+        {% if mensaje %}
+            {{ mensaje }}
+        {% endif %}
+    </div>
+    <form action="" method="POST">
+        <div class="formato_reg_ing_container">
+            <div action="" class="formato_reg_ing">
+                <H2>REGISTRAR</H2>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button id="btnRegistrar" type="submit">CONTINUAR</button>
+            </div>
+        </div>
+    </form>
+</main>
+{% endblock %}

@@ -12,7 +12,6 @@
     padding: 100px 50px;
     margin: 0px 10px;
     align-items: center;
-    height: 500px;
     width: 500px;
     border-radius: 1rem;
     transition: 1s;
@@ -47,6 +46,8 @@
 }
 .formato_reg_ing label{
     padding: 10px 0px;
+    max-width: 50px;
+    min-width: 50px;
 }
 .bg-login{
     background-color: rgb(207, 207, 207);
