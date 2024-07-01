@@ -1,7 +1,10 @@
-from django.forms import ModelForm
-from .models import Cliente
+from django import forms
 
-class ClienteForm(ModelForm):
-    class Meta:
-        model = Cliente
-        fields = '__all__'
+class RegisterForm(forms.Form):
+    correo = forms.CharField()
+    nombre = forms.CharField()
+    contraseña = forms.CharField(widget=forms.PasswordInput)
+
+class LoginForm(forms.Form):
+    correo = forms.CharField()
+    contraseña = forms.CharField(widget=forms.PasswordInput)

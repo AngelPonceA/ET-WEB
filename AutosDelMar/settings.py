@@ -68,7 +68,8 @@ TEMPLATES = [
         },
     },
 ]
-
+LOGIN_REDIRECT_URL = "autos/home"
+LOGOUT_REDIRECT_URL = "home"
 WSGI_APPLICATION = 'AutosDelMar.wsgi.application'
 
 
