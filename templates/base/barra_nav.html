@@ -13,10 +13,12 @@
                 <a class="formato-a" href="">Seguros</a>
             </li>
             <li class="nav-item seccion-nav">
-                <div class="buscador">
-                    <button id="btnBuscar"> <img src="{% static 'img/buscar.png'%}" alt="img-buscar"> </button>
-                    <input id="inputBuscar" type="text"></input>
-                </div>
+                <form method="get" action="{% url 'filtrar' %}">
+                    <div class="buscador">
+                        <button type="submit" id="btnBuscar"><img src="{% static 'img/buscar.png'%}" alt="img-buscar"></button>
+                        <input name="query" id="inputBuscar" type="text" placeholder="Modelo. . ."></input>
+                    </div>
+                </form>
             </li>
             <li>
                 <button class="boton-carrito-compra" id="btnCarritoCompra"></button>
