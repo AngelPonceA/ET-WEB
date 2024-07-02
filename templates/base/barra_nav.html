@@ -21,13 +21,17 @@
             <li>
                 <button class="boton-carrito-compra" id="btnCarritoCompra"></button>
             </li>
-            <li class="nav-item seccion-nav flex-row justify-content-start" id="lista-opciones-sesion">
-                <a class="boton" href="{% url 'register' %}"><button> Registrarse </button></a>
-                <a class="boton" href="{% url 'login' %}"><button> Iniciar sesion </button></a>
-            </li>
-            <li class="nav-item seccion-nav flex-row justify-content-start" id="btnCerrarSession">
-                <a class="boton" href="{% url 'login' %}""><button type="submit">CERRAR SESION</button></a>
-            </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item seccion-nav flex-row justify-content-start" id="lista-opciones-sesion">
+                    <a class="boton" href="#"><button type="submit"> {{ user.username | upper }} </button></a>
+                    <a class="boton" href="#"><button type="submit">CERRAR SESION</button></a>
+                </li>
+            {% else %}
+                <li class="nav-item seccion-nav flex-row justify-content-start" id="lista-opciones-sesion">
+                    <a class="boton" href="{% url 'register' %}"><button> Registrarse </button></a>
+                    <a class="boton" href="{% url 'login' %}"><button> Iniciar sesion </button></a>
+                </li>
+            {% endif %}
         </ul>
         </div>
     </div>

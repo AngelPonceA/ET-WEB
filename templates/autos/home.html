@@ -3,6 +3,8 @@
 {% block title%} Autos Del Mar {% endblock %}
 
 {% block content %}
+
+{% load humanize %}
     <div class="row mx-0">
         <!-- FILTRO -->
         <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 my-2 ">
@@ -65,12 +67,14 @@
                     <div class="info-carta">
                         <h2>{{auto.modelo}}</h2>
                         <p>{{auto.marca}}</p>
-                        <p>${{auto.precio}}</p>
+                        <p>$ {{auto.precio | intcomma}}</p>
                         <p>Stock: {{auto.stock}}</p>
                     </div>
                     <div class="contenedor-botones-carta">
                         <button class="boton-verMas">Ver detalles</button>
-                        <button class="boton-agregar">+</button>
+                        {% if user.is_authenticated %}
+                            <button class="boton-agregar">+</button>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}
