@@ -18,14 +18,14 @@ def clienteAdd(request):
                 "mensaje": f"Usuario {form.cleaned_data['nombre']} creado",
                 'form': RegisterForm()
             }
-            return render(request, 'clientes/register.html', context)
+            return render(request, 'register/register.html', context)
     else:
         form = RegisterForm()
 
     context = {
         'form': form,
     }
-    return render(request, 'clientes/register.html', context)
+    return render(request, 'register/register.html', context)
 
 def login_view(request):
     if request.method == 'POST':
@@ -41,4 +41,4 @@ def login_view(request):
                 form.add_error(None, 'Correo electrónico o contraseña incorrectos')
     else:
         form = LoginForm()
-    return render(request, 'clientes/login.html', {'form': form})
+    return render(request, 'login/login.html', {'form': form})
