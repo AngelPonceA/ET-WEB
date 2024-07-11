@@ -72,7 +72,8 @@
                         <p>ID: {{auto.id_auto}}</p>
                     </div>
                     <div class="contenedor-botones-carta">
-                        <button class="boton-verMas">Ver detalles</button>
+                        <a href="{% url 'ficha' auto.id_auto %}"><button class="boton-verMas">Ver detalles</button></a>
+                        
                         {% if user.is_authenticated %}
                             <button class="boton-agregar">+</button>
                         {% endif %}

@@ -1,0 +1,29 @@
+{% extends 'base/plantilla_base.html'%}
+
+{% block title%} Autos Del Mar {% endblock %}
+
+{% block content %}
+
+{% load humanize %}
+        <div class="galeria col-sm-12 col-md-12 col-lg-8 col-xl-8 my-2" id="galeriaAutos">
+            <!-- {% for auto in auto %} -->
+                <div class="carta">
+                    <img src="{{auto.img.url }}" class="card-img-top">
+                    <div class="info-carta">
+                        <h2>{{auto.modelo}}</h2>
+                        <p>{{auto.marca}}</p>
+                        <p>$ {{auto.precio | intcomma}}</p>
+                        <p>Stock: {{auto.stock}}</p>
+                        <p>ID: {{auto.id_auto}}</p>
+                    </div>
+                    <div class="contenedor-botones-carta">
+                        <button class="boton-verMas">Ver detalles</button>
+                        {% if user.is_authenticated %}
+                            <button class="boton-agregar">+</button>
+                        {% endif %}
+                    </div>
+                </div>
+            <!-- {% endfor %} -->
+        </div>
+    </div>
+{% endblock %}
