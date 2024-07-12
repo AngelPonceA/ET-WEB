@@ -27,8 +27,8 @@
                 </li>
             {% if user.is_authenticated %}
                 <li class="nav-item seccion-nav flex-row justify-content-start" id="lista-opciones-sesion">
-                    <a class="boton" href="#"><button type="submit"> {{ user.username | upper }} </button></a>
-                    <a class="boton" href="#"><button type="submit">CERRAR SESION</button></a>
+                    <a class="boton" href="#"><button type="submit"> {{ user.username | capfirst}} </button></a>
+                    <a class="boton" href="{% url 'logout' %}"><button type="submit">Cerrar Sesión</button></a>
                 </li>
             {% else %}
                 <li class="nav-item seccion-nav flex-row justify-content-start" id="lista-opciones-sesion">

@@ -5,13 +5,13 @@
 
 {% block content %}
 <main class="bg-login">
-    <form>
+    <form action="" method="POST">
         <div class="formato_reg_ing_container">
             <div class="formato_reg_ing">
                 <H2>INGRESAR</H2>
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button id="btnRegistrar" type="submit">CONTINUAR</button>
+                <button id="btnLogear" type="submit">CONTINUAR</button>
             </div>
         </div>
     </form>

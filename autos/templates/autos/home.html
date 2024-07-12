@@ -73,7 +73,6 @@
                     </div>
                     <div class="contenedor-botones-carta">
                         <a href="{% url 'ficha' auto.id_auto %}"><button class="boton-verMas">Ver detalles</button></a>
-                        
                         {% if user.is_authenticated %}
                             <button class="boton-agregar">+</button>
                         {% endif %}
