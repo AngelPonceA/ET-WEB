@@ -4,16 +4,14 @@
 {% block title %} Ingreso {% endblock %}
 
 {% block content %}
-<main class="bg-login">
-    <form action="" method="POST">
-        <div class="formato_reg_ing_container">
-            <div class="formato_reg_ing">
+    <div class="formato_reg_ing_container">
+        <div class="formato_reg_ing">
+            <form action="" method="POST">
                 <H2>INGRESAR</H2>
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button id="btnLogear" type="submit">CONTINUAR</button>
-            </div>
+            </form>
         </div>
-    </form>
-</main>
+    </div>
 {% endblock %}

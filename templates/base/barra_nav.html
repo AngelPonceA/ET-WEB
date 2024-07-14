@@ -24,7 +24,7 @@
                 {% if user.is_authenticated %}
                     <button class="boton-carrito-compra" id="btnCarritoCompra"></button>
                 {% endif %}
-                </li>
+            </li>
             {% if user.is_authenticated %}
                 <li class="nav-item seccion-nav flex-row justify-content-start" id="lista-opciones-sesion">
                     <a class="boton" href="#"><button type="submit"> {{ user.username | capfirst}} </button></a>

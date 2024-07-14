@@ -1,0 +1,16 @@
+body {
+    background-image: url('/static/img/fondo.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+    @media screen and (max-width: 1400px) {
+      body {
+        background-image: url('/static/img/fondo.png');
+        background-size: 450%;
+      }
+}
+
+.fondo-gris{
+    background-color: #dadada;
+}

@@ -15,8 +15,9 @@ def register_view(request):
             login(request, user)
             return redirect('home')
         else:
-            return render(request, 'register/register.html', {'form': form, 'error': 'Datos invalidos'})
+            return render(request, 'register/register.html', {'form': form, 'error': 'Datos invalidos'}) #Sin uso
     return render(request, 'register/register.html', {'form': forms.registerForm})
+
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -31,9 +32,9 @@ def login_view(request):
                 login(request, user)
                 return redirect('home')
             else:
-                return render(request, 'login/login.html', {'form': form, 'error': 'Nombre de usuario o contraseña incorrectos'})
+                return render(request, 'login/login.html', {'form': form, 'error': 'Nombre de usuario o contraseña incorrectos'}) #Sin uso
         else:
-            return render(request, 'login/login.html', {'form': form, 'error': 'Datos inválidos'})
+            return render(request, 'login/login.html', {'form': form, 'error': 'Datos inválidos'}) #Sin uso
     else:
         form = AuthenticationForm()
         return render(request, 'login/login.html', {'form': form})
@@ -54,9 +55,11 @@ def login_view(request):
 #         form = forms.loginForm()
 #     return render(request, 'login/login.html', {'form': forms.loginForm})
 
+
 def close_sesion(request):
     logout(request)
     return redirect('home')
+
 
 def aboutUs(request):
     return render(request, 'aboutUs/aboutUs.html')

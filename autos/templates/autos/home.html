@@ -12,7 +12,7 @@
                 <h1 class="text-start">Marca Modelo</h1>
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">MARCA</label>
-                    <select class="form-select" id="inputGroupSelect01">
+                    <select class="form-select" id="inputMarca">
                         <option selected>Sin asignar</option>
                         <option value="1">Ferrari</option>
                         <option value="2">Lamborghini</option>
@@ -29,7 +29,7 @@
                 <h1 class="text-start">Año</h1>
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect02">DESDE</label>
-                    <select class="form-select" id="inputGroupSelect02">
+                    <select class="form-select" id="inputAñoBase">
                         <option selected>Sin asignar</option>
                         <option value="1">2005</option>
                         <option value="2">2010</option>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect03">HASTA</label>
-                    <select class="form-select" id="inputGroupSelect03">
+                    <select class="form-select" id="inputAñoLimite">
                         <option selected>Sin asignar</option>
                         <option value="1">2020</option>
                         <option value="2">2022</option>
@@ -48,7 +48,7 @@
                 <h1 class="text-start">PRECIO</h1>
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect04">RANGO</label>
-                    <select class="form-select" id="inputGroupSelect04">
+                    <select class="form-select" id="inputPrecio">
                         <option selected>Sin asignar</option>
                         <option value="1">$0 y $100.000.000</option>
                         <option value="2">$100.000.000 y $200.000.000</option>
@@ -69,7 +69,6 @@
                         <p>{{auto.marca}}</p>
                         <p>$ {{auto.precio | intcomma}}</p>
                         <p>Stock: {{auto.stock}}</p>
-                        <p>ID: {{auto.id_auto}}</p>
                     </div>
                     <div class="contenedor-botones-carta">
                         <a href="{% url 'ficha' auto.id_auto %}"><button class="boton-verMas">Ver detalles</button></a>
