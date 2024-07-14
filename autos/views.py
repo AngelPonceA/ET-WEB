@@ -7,7 +7,7 @@ def home(request):
     autos = auto.objects.all() 
     context = {
         'autos': autos,
-    }
+    }   
     return render(request,'autos/home.html', context)
 
 def filtrar(request):
@@ -19,5 +19,5 @@ def filtrar(request):
     return render(request, 'autos/home.html', {'autos': autos, 'query': query})
 
 def ficha(request, id_auto):
-    auto = auto.objects.raw('SELECT * FROM auto WHERE id_auto = %s', [id_auto])[0]
-    return render(request, 'autos/ficha.html', {'auto': auto})
+    auto_obj = get_object_or_404(auto, id_auto=id_auto)
+    return render(request, 'autos/ficha.html', {'auto': auto_obj})

@@ -5,24 +5,27 @@
 {% block content %}
 
 {% load humanize %}
-        <div class="galeria col-sm-12 col-md-12 col-lg-8 col-xl-8 my-2">
-            <!-- {% for auto in auto %} -->
-            <div class="carta">
-                <img src="{{auto.img.url }}" class="card-img-top">
-                <div class="info-carta">
-                    <h2>{{auto.modelo}}</h2>
-                    <p>{{auto.marca}}</p>
-                    <p>$ {{auto.precio | intcomma}}</p>
-                    <p>Stock: {{auto.stock}}</p>
-                    <p>ID: {{auto.id_auto}}</p>
-                </div>
-                <div class="contenedor-botones-carta">
-                    {% if user.is_authenticated %}
-                        <button class="boton-agregar">+</button>
-                    {% endif %}
-                </div>
+    <div class="container">
+        <div class="row mt-4 mb-4">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mx-auto text-center">
+                <img src="{{ auto.img.url }}" class="card-img-top cartaGrande">
             </div>
-            <!-- {% endfor %} -->
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 mx-auto cartaGrande">
+                <h5>Modelo: {{ auto.modelo }}</h5>
+                <h5>Marca: {{ auto.marca }}</h5>
+                <h5>Año: {{ auto.año }}</h5>
+                <h5>Transmision: {{ auto.transmision }}</h5>
+                <h5>Motor: {{ auto.motor }}</h5>
+                <h5>Frenos: {{ auto.frenos }}</h5>
+                <h5>Velocidades: {{ auto.velocidades }}</h5>
+                <h5>Stock: {{ auto.stock }}</h5>
+                <h5>Precio: {{ auto.precio | intcomma}}</h5>
+                <button class="boton-agregar"><a href="{% url 'home' %}">Volver</a></button>
+                {% if user.is_authenticated %}
+                    <button class="boton-agregar">+</button>
+                {% endif %}
+            </div>
         </div>
     </div>
 {% endblock %}
+
