@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('autos/', include('autos.urls')),
     path('clientes/', include('clientes.urls')),
+    path('carrito/', include('carrito.urls')),
     path('', RedirectView.as_view(url='/autos/', permanent=True)),
 ]
 

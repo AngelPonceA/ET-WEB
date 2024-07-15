@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'autos',
     'clientes',
+    'carrito',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'carrito.proceso.py.total_pago',
             ],
         },
     },

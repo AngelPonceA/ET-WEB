@@ -22,7 +22,7 @@
             </li>
             <li>
                 {% if user.is_authenticated %}
-                    <button class="boton-carrito-compra" id="btnCarritoCompra"></button>
+                    <a href="{% url 'carrito' %}"><button class="boton-carrito-compra" id="btnCarritoCompra"></button></a>
                 {% endif %}
             </li>
             {% if user.is_authenticated %}

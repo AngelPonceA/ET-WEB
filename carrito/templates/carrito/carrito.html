@@ -1,0 +1,21 @@
+{% extends 'base/plantilla_base.html'%}
+
+{% block title%} Autos Del Mar {% endblock %}
+
+{% block content %}
+
+{% load humanize %}
+    <div class="formato_reg_ing_container">
+        <div class="formato_reg_ing col-sm-12 col-md-12 col-lg-8 col-xl-8 my-2 ">
+            <H2>Carro de compras</H2>
+            {% for elemento in elementos %}
+                <p>Elemento: {{ elemento. }} </p>
+                <p>Cantidad: {{ elemento. }}</p>
+                <p>Precio: {{ elemento. }}</p>
+                <p>Total: {{ elemento. }}</p>
+            {% endfor %}
+            <p>Total a pagar: </p>
+            <button type="submit">Pagar</button>
+        </div>
+    </div>
+{% endblock %}
